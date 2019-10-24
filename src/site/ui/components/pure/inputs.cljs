@@ -37,31 +37,6 @@
   :class [:rounded :bw1 :bd-gray :p1 :flex :justify-between :items-center])
 
 
-(defmethod inputs/input :file [ctx form-props attr props]
-  (let [value (forms-ui/value-in> ctx form-props attr)]
-    [:<>
-     (if value
-       [-file-preview
-        (fc-file-upload/filename value)
-        [:button
-         {:type :button
-          :on-click (fn [_]
-                      (fc-file-upload/release value)
-                      (forms-ui/<set-value ctx form-props attr nil))}
-         "Remove"]]
-       [-file-input-wrap
-        [-file-input-dropzone
-         [-file-input 
-          (-> (inputs/get-element-props
-               {:type :file
-                :name (inputs/get-input-name form-props attr)
-                :on-change (fn [e] 
-                             (when value (fc-file-upload/release value))
-                             (fc-file-upload-ui/<on-change-single ctx form-props attr e))}
-               props)
-              (dissoc :multiple))]]
-        (:file/label props)])]))
-
 (defn render-errors [attr-errors]
   (when-let [errors (get-in attr-errors [:$errors$ :failed])]
     (into [-error-messages-wrap]
@@ -70,8 +45,8 @@
                       errors)))))
 
 (defmulti wrapped-input
-  (fn [_ _ _ props] 
-    (or (:input/type props) :text)))
+          (fn [_ _ _ props]
+            (or (:input/type props) :text)))
 
 (defn add-default-class [props default-class]
   (let [current-class (:class props)]
@@ -85,7 +60,8 @@
     [-wrap {:class (:wrapper/class props)}
      (when label
        [:label
-        {:for (inputs/get-input-name form-props attr)}
+        {:for   (inputs/get-input-name form-props attr)
+         :class [(when (seq errors) "is-invalid")]}
         label])
 
      (if (or (:prepend/text props) (:append-text/text props))
@@ -96,30 +72,74 @@
         [inputs/render ctx form-props attr
          (add-default-class props ["form-control" (when (seq errors) "is-invalid")])]
         (when (:append/text props)
-          [:div.input-group-append [:span.input-group-text (:append/text props)]])
+          [:div.input-group-append [:span.input-group-text (:append/text props)]])]
 
-        ]
+       [inputs/render ctx form-props attr
+        (add-default-class props
+                           ["form-control"
+                            (when (seq errors) "is-invalid")])])
+     [render-errors errors]]))
 
-       [inputs/render ctx form-props attr (add-default-class props ["form-control" (when (seq errors) "is-invalid")])]
-       )
+(defmethod wrapped-input :radio-group [ctx form-props attr props]
+  (let [label (:input/label props)
+        errors (forms-ui/errors-in> ctx form-props attr)]
+    [-wrap {:class (:wrapper/class props)}
+     (when label
+       [:label
+        {:for   (inputs/get-input-name form-props attr)
+         :class [(when (seq errors) "is-invalid")]}
+        label])
+
+     [inputs/render ctx form-props attr
+      (add-default-class props
+                         ["form-control"
+                          (when (seq errors) "is-invalid")])]
+
      [render-errors errors]]))
 
 (defmethod wrapped-input :checkbox [ctx form-props attr props]
   (let [label (:input/label props)
         errors (forms-ui/errors-in> ctx form-props attr)]
-    [-wrap {:class [(:wrapper/class props)]}
-     [:div.form-check
-      [inputs/render ctx form-props attr (add-default-class props ["form-check-input" (when (seq errors) "is-invalid")])]
-      [:label {:for (inputs/get-input-name form-props attr)} label]] 
+    (if (:wrapper/inline props)
+      [-wrap {:class (:wrapper/class props)
+              :style {:flex-direction "row"}}
+       (when label
+         [:label.md-col-6.col-12.initial.my1
+          {:class [(when (seq errors) "is-invalid")]}
+          label])
+       [inputs/render ctx form-props attr
+        (add-default-class props ["form-check-input" (when (seq errors) "is-invalid")])]
+       [render-errors errors]]
+
+      [-wrap {:class (:wrapper/class props)}
+       (when label
+         [:label
+          {:class [(when (seq errors) "is-invalid")]}
+          label])
+       [inputs/render ctx form-props attr (add-default-class props ["form-check-input" (when (seq errors) "is-invalid")])]
+       [render-errors errors]])))
+
+(defmethod wrapped-input :select [ctx form-props attr props]
+  (let [label (:input/label props)
+        errors (forms-ui/errors-in> ctx form-props attr)]
+    [-wrap {:class (:wrapper/class props)}
+     (when label
+       [:label.select-input
+        {:for   (inputs/get-input-name form-props attr)
+         :class [(when (seq errors) "is-invalid")]}
+        label])
+     [:div.form-select
+      [inputs/render ctx form-props attr
+       (add-default-class props ["form-select-input" (when (seq errors) "is-invalid")])]]
      [render-errors errors]]))
 
 (defn render [ctx form-props attr props]
   [wrapped-input ctx form-props attr props])
 
 (defn render-all [ctx form-props & fields]
- (->> (map 
-        (fn [[attr props]]
-          ^{:key attr}
-          [render ctx form-props attr props]) 
-        (filter (complement nil?) fields))
+  (->> (map
+         (fn [[attr props]]
+           ^{:key attr}
+           [render ctx form-props attr props])
+         (filter (complement nil?) fields))
        (into [:<>])))

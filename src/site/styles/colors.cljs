@@ -3,7 +3,8 @@
 (def colors
   {:transparent  "transparent"
    :white        "#FFFFFF"
-   :black        "#000000"})
+   :black        "#000000"
+   :blue         "#00a1e4"})
 
 (defn transition [prop]
   (str (name prop) " 0.10s ease-in-out"))
@@ -30,7 +31,7 @@
    (gen-colors-styles "bdt" :border-top-color)
    (gen-colors-styles "bdb" :border-bottom-color)
    (gen-colors-styles "bdl" :border-left-color)
-   (gen-colors-styles "bdl" :border-right-color)
+   (gen-colors-styles "bdr" :border-right-color)
    [:.t-c {:transition (transition :color)}]
    [:.t-bg {:transition (transition :background-color)}]
    [:.t-bd {:transition (transition :border-color)}]])

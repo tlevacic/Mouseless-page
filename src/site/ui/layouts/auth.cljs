@@ -4,18 +4,25 @@
             [keechma.ui-component :as ui]))
 
 (defelement -wrap
-  :class [:bg-gradient-primary]
-  :style [{:height "100vh"
-           :width "100vw"}])
+            :tag :div
+            :class [:bg-blue :flex :justify-center :items-start]
+            :style [{:height "100vh"
+                     :width  "100vw"}])
 
-(def -content-wrap
-  :div.container>div.row.justify-center>div.col-xl-8.col-lg-10.col-md-12>div.card.o-hidden.border-0.shadow-lg.my-5>div.card-body)
+(defelement -content-wrap
+            :tag :div
+            :class [:bg-white :mt4 :p4 :rounded]
+            :style [{:width "100%"
+                     :max-width "70vw"
+                     :height "100%"
+                     :max-height "50vh"
+                     :box-shadow "5px 5px 5px 5px rgba(0,0,0,0.15)"}])
 
 (deftemplate render [ctx]
-  [-wrap
-   [-content-wrap
-    (slot :content)]])
+             [-wrap
+              [-content-wrap
+               (slot :content)]])
 
 (def component
   (template/constructor
-   {:renderer render}))
+    {:renderer render}))

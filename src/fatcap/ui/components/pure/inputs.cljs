@@ -19,7 +19,7 @@
          (assoc m k val)))
      
      default-props
-     props)))
+     element-props)))
 
 (defn get-input-name [[form-type _] attr]
   (str "i-" (hash attr)))

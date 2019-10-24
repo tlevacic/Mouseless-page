@@ -14,15 +14,16 @@
 (defn get-page [ctx]
   (let [account-role (sub> ctx :account-role)
         route        (route> ctx)]
+
     (match [account-role route]
-           [_ {:page "loading"}] :loading
+           [_ {:page "loading"}]                    :loading
 
            [:anon {:page "login"} ]                 :anon/login
            [:anon {:page "homepage"} ]              :anon/login
-        
-           [:admin {:page "homepage"}]                        :admin/homepage
 
-      :else :not-found)))
+           [:admin {:page "homepage"}]              :admin/homepage
+
+           :else :not-found)))
 
 (defn render [ctx]
   (let [page (get-page ctx)
