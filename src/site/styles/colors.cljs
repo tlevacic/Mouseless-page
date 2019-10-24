@@ -4,7 +4,7 @@
   {:transparent  "transparent"
    :white        "#FFFFFF"
    :black        "#000000"
-   :blue         "#00a1e4"})
+   :blue         "#4881BA"})
 
 (defn transition [prop]
   (str (name prop) " 0.10s ease-in-out"))

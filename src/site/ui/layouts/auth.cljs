@@ -15,7 +15,7 @@
             :style [{:width "100%"
                      :max-width "70vw"
                      :height "100%"
-                     :max-height "50vh"
+                     :max-height "85vh"
                      :box-shadow "5px 5px 5px 5px rgba(0,0,0,0.15)"}])
 
 (deftemplate render [ctx]
