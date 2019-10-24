@@ -1,0 +1,7 @@
+query CurrentAccount {
+  currentAccount {
+    id
+    role
+    email
+  }
+}

@@ -1,0 +1,13 @@
+/target
+/checkouts
+/.lein-*
+/.nrepl-port
+/resources/public/js
+/*-init.clj
+/*.log
+out
+.cache
+/dist
+/node_modules
+*.iml
+/.idea

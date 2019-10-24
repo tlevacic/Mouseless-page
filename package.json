@@ -1,0 +1,15 @@
+{
+  "name": "keechmainit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mihael Konjevic <konjevic@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@cljs-oss/module-deps": "^1.1.1",
+    "moment": "^2.24.0",
+    "parcel-bundler": "^1.12.3",
+    "react": "^16.8.6",
+    "react-aria-modal": "^4.0.0",
+    "react-dom": "^16.8.6"
+  }
+}
