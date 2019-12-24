@@ -23,7 +23,7 @@
 
 (defn render []
   [-wrap
-   [-logo {:src "icon.png" :alt "AAA"}]
+   [-logo {:src "keechma-logo.png" :alt "AAA" :style {:object-fit "contain" :width "300px"}}]
    [-menu
     (map (fn [ele]
            [:div

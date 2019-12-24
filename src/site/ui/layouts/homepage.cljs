@@ -3,11 +3,10 @@
             [keechma.toolbox.css.core :refer-macros [defelement]]
             [keechma.ui-component :as ui]))
 
-;TODO remove height
 (defelement -wrap
             :tag :div
             :class [:flex :.w-100vw]
-            :style [{:background-image  "linear-gradient(to bottom, #fdd231, #fdd231 50%, black 50%)"}])
+            :style [{:background-image  "linear-gradient(to bottom, #D1351B, #fdd231 50%, #03063D 50%)"}])
 
 (defelement -content-wrap
             :tag :div

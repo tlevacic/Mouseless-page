@@ -46,7 +46,7 @@
                      :height "480px"}])
 
 (defelement -card
-            :class [:flex :flex-row :.align-center :.w-80p :mt4 :.mx-auto]
+            :class [:flex :flex-row :.align-center :.w-85p :mt4 :.mx-auto]
             :style [{:border-color "white"}])
 
 (defelement -card-picture
