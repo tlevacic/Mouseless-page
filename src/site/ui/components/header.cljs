@@ -1,44 +1,36 @@
 (ns site.ui.components.header
   (:require [keechma.ui-component :as ui]
             [keechma.toolbox.ui :refer [sub> <cmd]]
+            [site.ui.components.pure.elements :as e]
             [keechma.toolbox.css.core :refer-macros [defelement]]
             [oops.core :refer [oget]]))
 
+(def items
+  [{:value "Features" :href {:page "features"}}
+   {:value "Download" :href {:page "download"} :icon "fab mr1 fa-apple"}
+   {:value "Buy"      :href {:page "buy"}}])
+
 (defelement -wrap
-  :class [:flex :flex-row :justify-between :py2])
+            :class [:.w-100p :flex :items-center :justify-between :pt3 :mb4])
 
-(defelement -menu-wrap
-  :tag :ul
-  :class [:flex :flex-row ])
+(defelement -menu
+            :class [:justify-between :flex]
+            :style [{:width "300px"}])
 
-(defmulti render-buttons (fn [_ role] role))
+(defelement -logo
+            :tag :img
+            :style [:width "120px"])
 
-(defmethod render-buttons :default [_ _])
-
-(defmethod render-buttons :anon [ctx _]
-  [:div
-   [:a.inline-block.mr1 {:href (ui/url ctx {:page "login"})} "Log In"]
-   [:a.inline-block.ml1 {:href (ui/url ctx {:page "signup"})} "Sign Up"]])
-
-(def menu-items
-  {:anon             []})
-
-(defn render-menu [ctx account-role]
-  (let [account-role-menu-items (menu-items account-role)]
-    [-menu-wrap
-     (map 
-      (fn [[title url-params]]
-        ^{:key title}
-        [:li.mx2
-         [:a {:href (ui/url ctx url-params)} title]])
-      account-role-menu-items)]))
-
-(defn render [ctx]
-  (let [account-role (sub> ctx :account-role)]
-    [-wrap
-     [render-menu ctx account-role]
-     [render-buttons ctx account-role]]))
+(defn render []
+  [-wrap
+   [-logo {:src "icon.png" :alt "AAA"}]
+   [-menu
+    (map (fn [ele]
+           [:div
+            (when (:icon ele)
+              [:i {:class [(:icon ele)]}])
+            [e/-text-link {:href (:href ele)} (:value ele)]])
+         items)]])
 
 (def component
-  {:renderer render
-   :subscription-deps [:account-role]})
+  {:renderer render})

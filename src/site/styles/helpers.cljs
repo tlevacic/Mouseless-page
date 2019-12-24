@@ -15,6 +15,8 @@
    [:.underline {:text-decoration "underline"}]
    [:.align-center {:align-items "center"}]
    [:.w-100p {:width "100%"}]
+   [:.w-80p {:width "80%"}]
+   [:.w-70p {:width "70%"}]
    [:.h-100p {:height "100%"}]
    [:.w-100vw {:width "100vw"}]
    [:.h-100vh {:height "100vh"}]

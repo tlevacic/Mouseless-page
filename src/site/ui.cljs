@@ -12,9 +12,12 @@
             [site.ui.layouts.auth]
             [site.ui.layouts.admin]
             [site.ui.layouts.mobile]
+            [site.ui.layouts.homepage]
+
+            [site.ui.pages.homepage]
 
             [site.ui.pages.anon.login]
-        
+
             [site.ui.pages.admin.homepage]
 
             [site.ui.components.header]))
@@ -28,19 +31,21 @@
   (into {} (map (fn [[k c]] [k (init-component c)]) components)))
 
 (def ui
-  (-> {:main                               site.ui.main/component
-       :loading                            site.ui.pages.loading/component
-       :not-found                          site.ui.pages.not-found/component
+  (-> {:main            site.ui.main/component
+       :loading         site.ui.pages.loading/component
+       :not-found       site.ui.pages.not-found/component
+       :homepage        site.ui.pages.homepage/component
 
-       :layout/auth                        site.ui.layouts.auth/component
-       :layout/admin                       site.ui.layouts.admin/component
-       :layout/mobile                      site.ui.layouts.mobile/component
-       
-       :anon/login                         site.ui.pages.anon.login/component
-      
-       :admin/homepage                    site.ui.pages.admin.homepage/component
+       :layout/auth     site.ui.layouts.auth/component
+       :layout/admin    site.ui.layouts.admin/component
+       :layout/mobile   site.ui.layouts.mobile/component
+       :layout/homepage site.ui.layouts.homepage/component
 
-       :c/header                           site.ui.components.header/component}
+       :anon/login      site.ui.pages.anon.login/component
+
+       :admin/homepage  site.ui.pages.admin.homepage/component
+
+       :c/header        site.ui.components.header/component}
 
       init-components
       fcui/install))
