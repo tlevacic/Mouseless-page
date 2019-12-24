@@ -14,11 +14,12 @@
             :class [:.w-100p :flex :items-center :justify-between :pt3 :mb4])
 
 (defelement -menu
-            :class [:justify-between :flex]
+            :class [:justify-between :flex :lg-col-8 :md-col-8 :sm-col-12]
             :style [{:width "300px"}])
 
 (defelement -logo
             :tag :img
+            :class [:lg-col-4 :md-col-4 :sm-col-12]
             :style [:width "120px"])
 
 (defn render []
