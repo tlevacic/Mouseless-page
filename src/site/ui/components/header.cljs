@@ -11,7 +11,7 @@
    {:value "Buy"      :href {:page "buy"}}])
 
 (defelement -wrap
-            :class [:.w-100p :flex :items-center :justify-between :pt3 :mb4])
+            :class [:.w-100p :flex :items-center :justify-between :pt3 :mb4 :flex-wrap])
 
 (defelement -menu
             :class [:justify-between :flex :lg-col-8 :md-col-8 :sm-col-12]

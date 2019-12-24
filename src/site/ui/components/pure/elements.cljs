@@ -35,8 +35,9 @@
 
 (defelement -text
             :tag :p
-            :class [:.w-70p]
+            :class [:.w-70p :inline-block]
             :style [{:font-size "20px"
+                     :text-align "left"
                      :line-height "28px"}])
 
 (defelement -mihael
@@ -46,7 +47,7 @@
                      :height "480px"}])
 
 (defelement -card
-            :class [:flex :flex-row :.align-center :.w-85p :mt4 :.mx-auto]
+            :class [:flex :flex-row :.align-center :.w-85p :mt4 :.mx-auto :flex-wrap]
             :style [{:border-color "white"}])
 
 (defelement -card-picture
@@ -55,4 +56,5 @@
             :style [{:border-radius "30px"}])
 
 (defelement -card-title
+            :tag :h1
             :class [:fs-40 :bold :c-white :mb2])
