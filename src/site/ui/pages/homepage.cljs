@@ -6,6 +6,7 @@
             [keechma.toolbox.forms.ui :as forms-ui]
             [site.ui.components.pure.collapsible :as c]
             [reagent.core :as r]
+            [site.ui.components.carousel :refer [render-carousel]]
             [site.ui.pages.anon.shared :refer [render-errors]]))
 
 (def title "Keechma Framework")
@@ -41,7 +42,14 @@
     [e/-text {:style {:text-align "center" :color "rgba(18,18,18,.5)"}} text]
     [e/-counter "COUNTER"]
     [e/-text {:class ["mt1 italic mb5 center"] :style {:color "rgba(18,18,18,.5)"}} "25% off on Hanukkah · 30-Day Money-Back Guarantee\n  "]
-    [e/-mihael {:src "image.png"}]
+    ;;[e/-mihael {:src "image.png"}]
+    [render-carousel
+     ["image.png"
+      "image.png"
+      "image.png"
+      "image.png"
+      "image.png"]]
+
     [e/-card
      [:div.lg-col-6.md-col-6.sm-col-12
       [e/-card-picture {:src "slika1.png"}]]
