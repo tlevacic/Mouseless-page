@@ -58,3 +58,9 @@
 (defelement -card-title
             :tag :h1
             :class [:fs-40 :bold :c-white :mb2])
+
+(defelement -link-element
+            :tag :div
+            :class [:col-3 :lg-col-3 :md-col-4 :sm-col-6 :fs-16 :px3 :fw-700 :lh-20]
+            :style [{:color "rgba(242, 242, 242, 0.5)"
+                     :padding-top "10px"}])
