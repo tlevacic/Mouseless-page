@@ -4,12 +4,14 @@
      :provides ["react"
                 "react-dom"
                 "react-aria-modal"
-                "moment"]
+                "moment"
+                "react-slick"]
 
      :global-exports {react            React
                       react-dom        ReactDOM
                       react-aria-modal ReactAriaModal
-                      moment           Moment}}])
+                      moment           Moment
+                      react-slick      ReactSlick}}])
 
 (defproject site "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.9.0"]
