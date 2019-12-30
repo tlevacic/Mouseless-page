@@ -35,8 +35,8 @@
                      :text-align "center"}])
 
 (defelement -text
-            :tag :p
-            :class [:.w-70p :inline-block]
+            :tag :div
+            :class [:max-width-4]
             :style [{:font-size "20px"
                      :text-align "left"
                      :line-height "28px"}
@@ -49,18 +49,13 @@
                      :object-fit "contain"
                      :height "480px"}])
 
-(defelement -card
-            :class [:flex :flex-row :.align-center :.w-85p :mt4 :.mx-auto :flex-wrap]
-            :style [{:border-color "white"}])
+
 
 ;TODO fix picture size on xs
 (defelement -card-picture
             :tag :img
-            :class []
-            :style [{:border-radius "30px"}
-                    (at-screen :xs
-                               [:& {:height "300px"
-                                    :width "100%"}])])
+            :class [:col-12]
+            :style [{:border-radius "30px"}])
 
 (defelement -card-title
             :tag :h1
@@ -70,11 +65,6 @@
                                [:& {:font-size  "30px"
                                     :margin-top "12px"}])])
 
-(defelement -image-wrap
-            :class [:lg-col-6 :md-col-6 :sm-col-12]
-            :style [{}
-                    (at-screen :xs
-                               [:& {:class [:flex :justify-center :.align-center]}])])
 
 (defelement -link-element
             :tag :div
@@ -82,11 +72,6 @@
             :style [{:color "rgba(242, 242, 242, 0.5)"
                      :padding-top "10px"}])
 
-(defelement -left-pic
-            :class [:lg-col-6 :md-col-6 :sm-col-12])
-
-(defelement -right-pic
-            :class [:lg-col-6 :md-col-6 :sm-col-12])
 
 (defelement -big-text
             :tag :p
@@ -95,3 +80,11 @@
                     (at-screen :xs
                                  [:& {:font-size  "30px"
                                       :padding "30px"}])])
+
+(defelement -image-div-size
+            :class [:col-8 :left]
+            :style [{}
+                    (at-screen :xs
+                               [:& {:width "calc(12/12 * 99.999 %)"}])])
+(defelement -text-div-size
+            :class [:col-12])
