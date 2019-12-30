@@ -81,6 +81,8 @@
                                  [:& {:font-size  "30px"
                                       :padding "30px"}])])
 
+
+;MEDIA QUERY NOT WORKING!!!!!!!
 (defelement -image-div-size
             :class [:col-8 :left]
             :style [{}
