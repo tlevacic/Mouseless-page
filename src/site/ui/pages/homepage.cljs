@@ -14,7 +14,7 @@
 (def title "Keechma Framework")
 (def text "Keechma is pluggable micro framework for Reagent written in ClojureScript.")
 
-
+;todo add functional counter
 
 (def faq
   [{:id    0
@@ -111,10 +111,13 @@
       [e/-text {:class ["mt1 italic mb4 center"] :style {:color "rgba(18,18,18,.5)"}} "25% off on Hanukkah · 30-Day Money-Back Guarantee\n  "]]]
     [:div.w-80p.mt4.c-white.mb4
      [:h1.pt3.bold.pb2 {:style {:font-size "44px"}} "FAQ"]
+
+     ;todo modify ui
      [:div.flex.flex-row.flex-wrap
       (map (fn [e]
              [c/render (:title e) (:text e)])
            faq)]]
+
     [:div.w-80p.mt4.flex.flex-row.flex-wrap.py3.mb3 {:style {:border-top    "1px solid rgba(242, 242, 242, 0.5)"
                                                              :border-bottom "1px solid rgba(242, 242, 242, 0.5)"}}
      (map (fn [e]
