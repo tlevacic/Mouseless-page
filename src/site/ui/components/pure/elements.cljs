@@ -53,10 +53,14 @@
             :class [:flex :flex-row :.align-center :.w-85p :mt4 :.mx-auto :flex-wrap]
             :style [{:border-color "white"}])
 
+;TODO fix picture size on xs
 (defelement -card-picture
             :tag :img
             :class []
-            :style [{:border-radius "30px"}])
+            :style [{:border-radius "30px"}
+                    (at-screen :xs
+                               [:& {:height "300px"
+                                    :width "100%"}])])
 
 (defelement -card-title
             :tag :h1
