@@ -61,37 +61,39 @@
      [e/-right-pic
       [e/-card-title "Boost your productivity"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)"}} "Stop chasing your mouse and save up to 8 days a year. Surely, you’ll find something better to do with your time."]]
-     [:div.lg-col-6.md-col-6.sm-col-12 {:style {:text-align "right"}}
+     [e/-left-pic
       [e/-card-picture {:src "slika2.png"}]]]
-    [e/-big-text
-     "     Mouseless caters shortcuts
-     for your favorite apps in bite-
-     sized exercises to you.
-     Interactive drills train the
-     muscle-memoryrequired
-     to have your fingers flying
-     across the keyboard."]
+    [:div.flex.flex-column.justify-center.align-center
+     [e/-big-text
+           "Mouseless caters shortcuts
+           for your favorite apps in bite-
+           sized exercises to you.
+           Interactive drills train the
+           muscle-memoryrequired
+           to have your fingers flying
+           across the keyboard."]]
     [e/-card
-     [:div.lg-col-6.md-col-6.sm-col-12 [e/-card-picture {:src "slika3.png" :style {:width "350px"}}]]
-     [:div.pl5.lg-col-6.md-col-6.sm-col-12 {:style {:text-align "right"}}
+     [e/-image-wrap
+      [e/-card-picture {:src "slika3.png" :style {:width "350px"}}]]
+     [e/-right-pic
       [e/-card-title "Need to cheat?"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)"}} "Look up a shortcut within your current app. Works with every app you’ve ever installed."]]]
     [e/-card
-     [:div.lg-col-6.md-col-6.sm-col-12
+     [e/-image-wrap
       [e/-card-title "All your favorites in one place"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)"}} "Stop chasing your mouse and save up to 8 days a year. Surely, you’ll find something better to do with your time."]]
-     [:div.lg-col-6.md-col-6.sm-col-12 {:style {:text-align "right"}}
+     [e/-right-pic
       [e/-card-picture {:src "slika5.png" :style {:width "350px"}}]]]
 
-    [:div.flex.flex-row.mt4.flex-wrap.w-90p.px5
+    [:div.flex.flex-row.mt4.flex-wrap.lg-col-10.md-col-8.sm-col-12.px2
      [:div.lg-col-4.md-col-4.sm-col-12
-      [:h1.c-white "1.000+ Shortcuts"]
+      [:h1.c-white.pb1 "1.000+ Shortcuts"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)" :font-size "1rem"}} "With our database you’ve got more than 1.000 keyboard commands at your fingertips, subdivided by app and category."]]
      [:div.lg-col-4.md-col-4.sm-col-12
-      [:h1.c-white "Keyboard Optimization"]
+      [:h1.c-white.pb1 "Keyboard Optimization"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)" :font-size "1rem"}} "Mouseless translates shortcuts to the language requirements of your keyboard."]]
      [:div.lg-col-4.md-col-4.sm-col-12
-      [:h1.c-white "Offline Support"]
+      [:h1.c-white.pb1 "Offline Support"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)" :font-size "1rem"}} "No Wi-fi – no problem. Mouseless runs just as smoothly in a rustic cabin as on a plane."]]]
     [:div.w-80p.mt4
      [:div.lg-col-12.md-col-12.sm-col-12.px4.pt4.flex.flex-column.bg-yellow {:style {:border-radius "10px"}}

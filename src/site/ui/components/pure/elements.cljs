@@ -85,9 +85,9 @@
             :class [:lg-col-6 :md-col-6 :sm-col-12])
 
 (defelement -big-text
-            :tag :pre
-            :class [:c-white :fs-45 :mt5 :fw-700 :lh-1.2]
-            :style [{}
+            :tag :p
+            :class [:c-white :fs-45 :mt5 :fw-700]
+            :style [{:line-height "1.2"}
                     (at-screen :xs
                                  [:& {:font-size  "30px"
-                                      :padding "0px"}])])
+                                      :padding "30px"}])])
