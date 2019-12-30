@@ -65,6 +65,12 @@
                                [:& {:font-size  "30px"
                                     :margin-top "12px"}])])
 
+(defelement -card-wrap
+            :class [:col-12 :lg-col-6 :md-col-6 :sm-col-12 :flex]
+            :style [{}
+                    (at-screen :xs
+                               [:& {:justify-content "center"}])])
+{:justify-content "center"}
 
 (defelement -link-element
             :tag :div
@@ -74,19 +80,16 @@
 
 
 (defelement -big-text
-            :tag :p
-            :class [:c-white :fs-45 :mt5 :fw-700]
+            :tag :div
+            :class [:c-white :fs-45 :mt5 :fw-700 :col-12 :.mx-auto :md-col-10 :sm-col-11 :lg-col-8]
             :style [{:line-height "1.2"}
                     (at-screen :xs
-                                 [:& {:font-size  "30px"
-                                      :padding "30px"}])])
+                                 [:& {:font-size  "30px" :padding "13px"}])])
 
 
 ;MEDIA QUERY NOT WORKING!!!!!!!
 (defelement -image-div-size
-            :class [:col-8 :left]
-            :style [{}
-                    (at-screen :xs
-                               [:& {:width "calc(12/12 * 99.999 %)"}])])
+            :class [:col-11 :sm-col-12 :md-col-8 :lg-col-8])
+
 (defelement -text-div-size
             :class [:col-12])

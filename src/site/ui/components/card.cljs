@@ -12,21 +12,21 @@
       (do
         [:div.col-12.mt4
         [:div.max-width-4.mx-auto.flex.flex-row.flex-wrap
-         [:div.lg-col-6.md-col-6.sm-col-12
+         [e/-card-wrap
           [e/-image-div-size
            [e/-card-picture {:src img}]]]
-         [:div.lg-col-6.md-col-6.sm-col-12
+         [:div.lg-col-6.md-col-6.sm-col-12.col-11.mx-auto
           [e/-text-div-size
            [e/-card-title title]
            [e/-text {:style {:color "hsla(0,0%,94.9%,.5)"}} text]]]]])
       (do
         [:div.col-12.mt4
         [:div.max-width-4.mx-auto.flex.flex-row.flex-wrap
-         [:div.lg-col-6.md-col-6.sm-col-12
+         [:div.lg-col-6.md-col-6.sm-col-12.col-11.mx-auto
           [e/-text-div-size
            [e/-card-title title]
            [e/-text {:style {:color "hsla(0,0%,94.9%,.5)"}} text]]]
-         [:div.lg-col-6.md-col-6.sm-col-12
-          [e/-image-div-size {:class ["right"]}
+         [e/-card-wrap {:class ["justify-end"]}
+          [e/-image-div-size
            [e/-card-picture {:src img}]]]]]
        ))))

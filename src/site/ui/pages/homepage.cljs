@@ -73,7 +73,7 @@
            (render-cards ele))
          (take 2 card-content))
 
-    [:div.flex.flex-column.justify-center.align-center
+    [:div.col-12
      [e/-big-text
            "Mouseless caters shortcuts
            for your favorite apps in bite-
@@ -85,7 +85,7 @@
 
     (map (fn [ele]
            (render-cards ele))
-         (take 2 (drop 2 card-content)))
+         (drop 2 card-content))
 
 
     [:div.flex.flex-row.mt4.flex-wrap.lg-col-10.md-col-8.sm-col-12.px2
@@ -98,6 +98,8 @@
      [:div.lg-col-4.md-col-4.sm-col-12
       [:h1.c-white.pb1 "Offline Support"]
       [e/-text {:style {:color "hsla(0,0%,94.9%,.5)" :font-size "1rem"}} "No Wi-fi – no problem. Mouseless runs just as smoothly in a rustic cabin as on a plane."]]]
+
+
     [:div.w-80p.mt4
      [:div.lg-col-12.md-col-12.sm-col-12.px4.pt4.flex.flex-column.bg-yellow {:style {:border-radius "10px"}}
       [:div.flex.flex.row
