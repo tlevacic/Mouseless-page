@@ -1,6 +1,7 @@
 (ns site.ui.components.header
   (:require [keechma.ui-component :as ui]
             [keechma.toolbox.ui :refer [sub> <cmd]]
+            [site.styles.helpers :refer [at-screen]]
             [site.ui.components.pure.elements :as e]
             [keechma.toolbox.css.core :refer-macros [defelement]]
             [oops.core :refer [oget]]))
@@ -11,12 +12,16 @@
    {:value "Buy"      :href {:page "buy"}}])
 
 (defelement -wrap
-            :class [:.w-100p :flex :items-center :justify-between :pt3 :mb4 :flex-wrap])
+            :class [:.w-100p :flex :items-center :justify-between :pt3 :mb4 :flex-wrap]
+            :style [{}
+                    (at-screen :xs
+                               [:& {:flex-direction "column"}])])
 
 (defelement -menu
-            :class [:justify-between :flex :lg-col-8 :md-col-8 :sm-col-12]
-            :style [{:width "300px"}])
-
+            :class [:justify-between :flex]
+            :style [{:width "300px"}
+                    (at-screen :xs
+                               [:& {:padding "30px"}])])
 (defelement -logo
             :tag :img
             :class [:lg-col-4 :md-col-4 :sm-col-12]

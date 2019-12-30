@@ -1,5 +1,6 @@
 (ns site.ui.components.pure.elements
- (:require [keechma.toolbox.css.core :refer-macros [defelement]]))
+ (:require [keechma.toolbox.css.core :refer-macros [defelement]]
+           [site.styles.helpers :refer [at-screen]]))
 
 (defelement -three-column-cards-wrap
   :class [:flex :flex-wrap :justify-between]
@@ -38,7 +39,9 @@
             :class [:.w-70p :inline-block]
             :style [{:font-size "20px"
                      :text-align "left"
-                     :line-height "28px"}])
+                     :line-height "28px"}
+                    (at-screen :xs
+                               [:& {:width "100%"}])])
 
 (defelement -mihael
             :tag :img
@@ -52,15 +55,39 @@
 
 (defelement -card-picture
             :tag :img
-            :class [:border]
+            :class []
             :style [{:border-radius "30px"}])
 
 (defelement -card-title
             :tag :h1
-            :class [:fs-40 :bold :c-white :mb2])
+            :class [:fs-40 :bold :c-white :mb2]
+            :style [{}
+                    (at-screen :xs
+                               [:& {:font-size  "30px"
+                                    :margin-top "12px"}])])
+
+(defelement -image-wrap
+            :class [:lg-col-6 :md-col-6 :sm-col-12]
+            :style [{}
+                    (at-screen :xs
+                               [:& {:class [:flex :justify-center :.align-center]}])])
 
 (defelement -link-element
             :tag :div
             :class [:col-3 :lg-col-3 :md-col-4 :sm-col-6 :fs-16 :px3 :fw-700 :lh-20]
             :style [{:color "rgba(242, 242, 242, 0.5)"
                      :padding-top "10px"}])
+
+(defelement -left-pic
+            :class [:lg-col-6 :md-col-6 :sm-col-12])
+
+(defelement -right-pic
+            :class [:lg-col-6 :md-col-6 :sm-col-12])
+
+(defelement -big-text
+            :tag :pre
+            :class [:c-white :fs-45 :mt5 :fw-700 :lh-1.2]
+            :style [{}
+                    (at-screen :xs
+                                 [:& {:font-size  "30px"
+                                      :padding "0px"}])])

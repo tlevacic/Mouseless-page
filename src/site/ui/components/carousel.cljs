@@ -10,5 +10,5 @@
             :slidesToScroll 1}
     (map (fn [image]
            ^{:key image}
-           [:div.col-12.md-col-2
+           [:div.md-col-2.lg-col-8
             [:img.w-100p {:src image}]]) images)]])
