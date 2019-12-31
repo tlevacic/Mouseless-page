@@ -19,9 +19,8 @@
 (defelement -counter
             ;TODO fix padding and margin
             :tag :div
-            :class [:mt3 :px2 :py2]
-            :style [{:width "300px"
-                     :height "45px"
+            :class [:mt3 :px2 :py2 :col-12 :lg-col-4 :md-col-4 :sm-col-12]
+            :style [{:height "45px"
                      :border-radius "13px"
                      :opacity "0.1"
                      :background-color "rgba(18,18,18,.5)"}])
@@ -87,7 +86,6 @@
                                  [:& {:font-size  "30px" :padding "13px"}])])
 
 
-;MEDIA QUERY NOT WORKING!!!!!!!
 (defelement -image-div-size
             :class [:col-11 :sm-col-12 :md-col-8 :lg-col-8])
 
