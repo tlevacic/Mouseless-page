@@ -22,8 +22,8 @@
     [e/-counter "COUNTER"]
     [e/-text {:class ["mt1 italic mb5"] :style {:color "rgba(18,18,18,.5)" :text-align "center"}} "25% off on Hanukkah · 30-Day Money-Back Guarantee\n  "]
     [render-carousel
-     ["https://picsum.photos/id/100/300/250"
-      "https://picsum.photos/id/101/300/250"
+     ["https://picsum.photos/id/132/300/250"
+      "https://picsum.photos/id/124/300/250"
       "https://picsum.photos/id/120/300/250"
       "https://picsum.photos/id/108/300/250"
       "https://picsum.photos/id/130/300/250"
