@@ -68,7 +68,7 @@
      [:h1.pt3.bold.pb2 {:style {:font-size "44px"
                                 :border-bottom "1px solid rgba(242, 242, 242, 0.5)"}} "FAQ"]
 
-     
+
      [:div.flex.flex-row.flex-wrap
       (map (fn [e]
              [c/render (:title e) (:text e)])

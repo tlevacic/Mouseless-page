@@ -87,7 +87,7 @@
                     :pretty-print    false
                     :infer-externs        true
                     :npm-deps             false
-                    :pseudo-names true
+                    :pseudo-names false
                     :foreign-libs ~foreign-libs}}
 
     {:id           "test"
