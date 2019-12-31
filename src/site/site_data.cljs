@@ -21,19 +21,19 @@
   [{:order 1
     :title "Interactive Training"
     :text "A session takes less than 5 minutes and covers about 10 shortcuts. Apply your new skills right away to reinforce your learning experience."
-    :img "slika1.png"}
+    :img "https://picsum.photos/id/124/300/250"}
    {:order 2
     :title "Boost your productivity"
     :text "Stop chasing your mouse and save up to 8 days a year. Surely, you’ll find something better to do with your time."
-    :img "slika2.png"}
+    :img "https://picsum.photos/id/125/300/250"}
    {:order 1
     :title "Need to cheat?"
     :text "Look up a shortcut within your current app. Works with every app you’ve ever installed."
-    :img "slika3.png"}
+    :img "https://picsum.photos/id/126/300/250"}
    {:order 2
     :title "All your favorites in one place"
     :text "Stop chasing your mouse and save up to 8 days a year. Surely, you’ll find something better to do with your time."
-    :img "slika5.png"}])
+    :img "https://picsum.photos/id/127/300/250"}])
 
 (def links
   ["Code" "Shortcuts" "Trello" "Shortcuts" "Things" "Shortcuts" "Slack" "Sketch" "Notion" "Shortcuts" "macOS" "Shortcuts" "Bear" "Shortcuts" "Google" "Docs" "Shortcuts" "Gmail" "Shortcuts" "Firefox"])
